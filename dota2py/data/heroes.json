@@ -527,23 +527,23 @@
                 "localized_name": "Earth Spirit"
             },
             {
-                "name": "npc_dota_hero_abyssal_underlord",
-                "id": 108,
-                "localized_name": "Abyssal Underlord"
-            },
-            {
                 "name": "npc_dota_hero_terrorblade",
                 "id": 109,
                 "localized_name": "Terrorblade"
             },
             {
-                "name": "npc_dota_hero_oracle",
+                "name": "npc_dota_hero_phoenix",
                 "id": 110,
+                "localized_name": "Phoenix"
+            },
+            {
+                "name": "npc_dota_hero_oracle",
+                "id": 111,
                 "localized_name": "Oracle"
             },
             {
                 "name": "npc_dota_hero_techies",
-                "id": 111,
+                "id": 105,
                 "localized_name": "Techies"
             },
             {
@@ -555,9 +555,48 @@
                 "name": "npc_dota_hero_arc_warden",
                 "id": 113,
                 "localized_name": "Arc Warden"
+            },
+            {
+                "name": "npc_dota_hero_abyssal_underlord",
+                "id": 108,
+                "localized_name": "Underlord"
+            },
+            {
+                "name": "npc_dota_hero_monkey_king",
+                "id": 114,
+                "localized_name": "Monkey King"
+            },
+            {
+                "name": "npc_dota_hero_pangolier",
+                "id": 120,
+                "localized_name": "Pangolier"
+            },
+            {
+                "name": "npc_dota_hero_dark_willow",
+                "id": 119,
+                "localized_name": "Dark Willow"
+            },
+            {
+                "name": "npc_dota_hero_grimstroke",
+                "id": 121,
+                "localized_name": "Grimstroke"
+            },
+            {
+                "name": "npc_dota_hero_mars",
+                "id": 129,
+                "localized_name": "Mars"
+            },
+            {
+                "name": "npc_dota_hero_void_spirit",
+                "id": 126,
+                "localized_name": "Void Spirit"
+            },
+            {
+                "name": "npc_dota_hero_snapfire",
+                "id": 128,
+                "localized_name": "Snapfire"
             }
-        ]
-        ,
-        "count": 113
+        ],
+        "count": 119
     }
 }

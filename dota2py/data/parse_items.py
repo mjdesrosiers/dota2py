@@ -51,8 +51,23 @@ def parse_substructure(idx, lines):
             # check if next line is structure start
             if lines[idx + 1].strip() is not "{":
                 raise ValueError("Structure not as expected!")
+            idx_old = idx
             idx, subdata = parse_substructure(idx + 2, lines)
-            data[k] = subdata
+
+            # two lines up might be the name, maybe?
+            if ((idx_old - 2) < 0):
+                data[k] = subdata
+            else:
+                if COMMENT not in lines[idx_old-2]:
+                    #print(f"{idx_old}th line no replacements! [{line}]")
+                    data[k] = subdata
+                else:
+                    #print(f"{idx_old}th line to replace is: {lines[idx_old-2]}")
+                    comment_idx = lines[idx_old-2].index(COMMENT)
+                    new_name = lines[idx_old - 2][(comment_idx + len(COMMENT)):].strip()
+                    #print(f"replacing {k} with {new_name}")
+                    data[new_name] = subdata
+                    #print(data)
 
     return (idx, data)
 
@@ -63,22 +78,25 @@ with open(filename) as f:
     idx = 0
     idx, data = parse_substructure(0, lines)
     print("done")
-    #pprint.pprint(data)
+    pprint.pprint(data, depth=2)
 
-    items = data["DOTAAbilities"]
+    pprint.pprint(list(data.keys()))
+    items = data['DOTAAbilities']
 
     ilist = list()
 
     for k in items.keys():
-        if k.startswith("item_"):
+        if True: # k.startswith("item_"):
             item = items[k]
-            if 'ItemAliases' not in item:
+            #if 'ItemAliases' not in item:
+            #    continue
+            name = k #item['ItemAliases']
+            if not isinstance(item, dict):
                 continue
-            name = item['ItemAliases']
             id = item['ID']
             id = int(id)
             herodata = dict()
-            herodata['name'] = str(k)[5:]
+            herodata['name'] = str(k)
             herodata['id'] = id
             ilist.append(herodata)
 

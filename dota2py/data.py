@@ -83,7 +83,7 @@ def get_hero_name(id):
     if not HEROES_CACHE:
         load_heroes()
 
-    return HEROES_CACHE.get(id)
+    return HEROES_CACHE.get(id, "UNKNOWN_HERO")
 
 
 def get_item_name(id):
@@ -94,7 +94,7 @@ def get_item_name(id):
     if not ITEMS_CACHE:
         load_items()
 
-    return ITEMS_CACHE.get(id)
+    return ITEMS_CACHE.get(id, "UNKNOWN_ITEM")
 
 
 def get_steam_id_32(steamid_64):

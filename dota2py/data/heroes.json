@@ -595,8 +595,13 @@
                 "name": "npc_dota_hero_snapfire",
                 "id": 128,
                 "localized_name": "Snapfire"
+            },
+            {
+                "name": "npc_dota_hero_hoodwink",
+                "id": 123,
+                "localized_name": "Hoodwink"
             }
         ],
-        "count": 119
+        "count": 120
     }
 }
